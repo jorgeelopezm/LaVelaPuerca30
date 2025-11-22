@@ -86,7 +86,12 @@
 
   <div id="emoji">🐷</div>
 
-  <h1>Cuenta regresiva para el concierto de los 30 años de La Vela Puerca en la Rambla de Montevideo</h1>
+<h1>
+  Cuenta regresiva para el concierto<br>
+  de los 30 años de La Vela Puerca<br>
+  en la Rambla de Montevideo
+</h1>
+
 
   <div id="countdown">Velapuerquiando...</div>
 
@@ -108,7 +113,7 @@
       const seconds = Math.floor((difference % (1000 * 60)) / 1000);
 
       document.getElementById("countdown").innerHTML =
-        `${days} days • ${hours} hrs • ${minutes} min • ${seconds} sec`;
+        `${days} días • ${hours} horas • ${minutes} minutos • ${seconds} segundos`;
     }
 
     setInterval(updateCountdown, 1000);
