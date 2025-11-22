@@ -1,23 +1,68 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>La Vela Puerca 30 Años</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Countdown to December 13, 2025</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background: #f5f5f5;
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Poppins', sans-serif;
+      color: #ffffff;
+
+      /* Soft gradient background */
+      background: linear-gradient(135deg, #FF85A1 0%, #7F5AF0 100%);
       text-align: center;
-      padding-top: 100px;
     }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      font-weight: 600;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.25);
+    }
+
+    #emoji {
+      font-size: 5rem;
+      margin-bottom: 20px;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    /* Gentle floating animation */
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-12px); }
+      100% { transform: translateY(0px); }
+    }
+
     #countdown {
-      font-size: 48px;
-      color: #333;
+      font-size: 2rem;
+      font-weight: 500;
+      padding: 15px 25px;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+      backdrop-filter: blur(6px);
     }
   </style>
 </head>
+
 <body>
-  <h1>Cuenta regresiva para el concierto de los 30 años de La Vela Puerca</h1>
-  <div id="countdown"></div>
+
+  <div id="emoji">🐷</div>
+
+  <h1>Countdown to Saturday, December 13, 2025</h1>
+
+  <div id="countdown">Loading...</div>
 
   <script>
     function updateCountdown() {
@@ -26,7 +71,7 @@
       const difference = targetDate - now;
 
       if (difference <= 0) {
-        document.getElementById("countdown").innerHTML = "It's here!";
+        document.getElementById("countdown").innerHTML = "It's here! 🎉";
         return;
       }
 
@@ -36,11 +81,12 @@
       const seconds = Math.floor((difference % (1000 * 60)) / 1000);
 
       document.getElementById("countdown").innerHTML =
-        days + " days " + hours + " hrs " + minutes + " min " + seconds + " sec";
+        `${days} days • ${hours} hrs • ${minutes} min • ${seconds} sec`;
     }
 
     setInterval(updateCountdown, 1000);
-    updateCountdown();
+    updateCountdown(); 
   </script>
+
 </body>
 </html>
