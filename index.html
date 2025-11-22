@@ -3,12 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>La Vela Puerca 30 años</title>
+  <title>La Vela Puerca 30 Años</title>
 
   <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
   <style>
+    :root {
+      --primary: #fd1817;   /* Bold red */
+      --text-light: #ffffff;
+      --text-dark: #000000;
+    }
+
     body {
       margin: 0;
       height: 100vh;
@@ -16,42 +22,62 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      font-family: 'Poppins', sans-serif;
-      color: #ffffff;
-
-      /* Soft gradient background */
-      background: linear-gradient(135deg, #FF85A1 0%, #7F5AF0 100%);
+      font-family: "Poppins", sans-serif;
       text-align: center;
-    }
 
-    h1 {
-      font-size: 2.5rem;
-      margin-bottom: 20px;
-      font-weight: 600;
-      text-shadow: 0 2px 8px rgba(0,0,0,0.25);
+      /* Clean red background */
+      background: var(--primary);
+      color: var(--text-light);
+      padding: 20px;
     }
 
     #emoji {
       font-size: 5rem;
-      margin-bottom: 20px;
+      margin-bottom: 15px;
       animation: float 3s ease-in-out infinite;
     }
 
-    /* Gentle floating animation */
+    /* Floating animation */
     @keyframes float {
-      0% { transform: translateY(0px); }
-      50% { transform: translateY(-12px); }
-      100% { transform: translateY(0px); }
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0); }
+    }
+
+    h1 {
+      font-size: 1.9rem;
+      margin: 0 0 20px 0;
+      font-weight: 700;
+      text-shadow: 0 2px 6px rgba(0,0,0,0.3);
+      padding: 0 10px;
     }
 
     #countdown {
-      font-size: 2rem;
+      font-size: 1.6rem;
       font-weight: 500;
-      padding: 15px 25px;
-      background: rgba(255, 255, 255, 0.2);
-      border-radius: 15px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+
+      background: rgba(255, 255, 255, 0.15);
+      padding: 18px 25px;
+      border-radius: 12px;
       backdrop-filter: blur(6px);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.25);
+      max-width: 90%;
+    }
+
+    /* Improved layout for very small phones */
+    @media (max-width: 480px) {
+      #emoji {
+        font-size: 4.2rem;
+      }
+
+      h1 {
+        font-size: 1.5rem;
+      }
+
+      #countdown {
+        font-size: 1.3rem;
+        padding: 15px 20px;
+      }
     }
   </style>
 </head>
@@ -60,9 +86,9 @@
 
   <div id="emoji">🐷</div>
 
-  <h1>Cuenta regresiva para el concierto de los 30 años de La Vela Puerca</h1>
+  <h1>Cuenta regresiva para el concierto de los 30 años de La Vela Puerca en la Rambla de Montevideo</h1>
 
-  <div id="countdown">VelaPuerquiando...</div>
+  <div id="countdown">Velapuerquiando...</div>
 
   <script>
     function updateCountdown() {
@@ -71,7 +97,8 @@
       const difference = targetDate - now;
 
       if (difference <= 0) {
-        document.getElementById("countdown").innerHTML = "¡ES HOY, VAMO LA VELAAAA! 🎉";
+        document.getElementById("countdown").innerHTML =
+          "¡ES HOY, VAMO LA VELAAAAA! 🎉";
         return;
       }
 
@@ -81,11 +108,11 @@
       const seconds = Math.floor((difference % (1000 * 60)) / 1000);
 
       document.getElementById("countdown").innerHTML =
-        `${days} días • ${hours} horas • ${minutes} minutos • ${seconds} segundos`;
+        `${days} days • ${hours} hrs • ${minutes} min • ${seconds} sec`;
     }
 
     setInterval(updateCountdown, 1000);
-    updateCountdown(); 
+    updateCountdown();
   </script>
 
 </body>
