@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Countdown to December 13, 2025</title>
+  <title>La Vela Puerca 30 años</title>
 
   <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
@@ -60,9 +60,9 @@
 
   <div id="emoji">🐷</div>
 
-  <h1>Countdown to Saturday, December 13, 2025</h1>
+  <h1>Cuenta regresiva para el concierto de los 30 años de La Vela Puerca</h1>
 
-  <div id="countdown">Loading...</div>
+  <div id="countdown">VelaPuerquiando...</div>
 
   <script>
     function updateCountdown() {
@@ -71,7 +71,7 @@
       const difference = targetDate - now;
 
       if (difference <= 0) {
-        document.getElementById("countdown").innerHTML = "It's here! 🎉";
+        document.getElementById("countdown").innerHTML = "¡ES HOY, VAMO LA VELAAAA! 🎉";
         return;
       }
 
@@ -81,7 +81,7 @@
       const seconds = Math.floor((difference % (1000 * 60)) / 1000);
 
       document.getElementById("countdown").innerHTML =
-        `${days} days • ${hours} hrs • ${minutes} min • ${seconds} sec`;
+        `${days} días • ${hours} horas • ${minutes} minutos • ${seconds} segundos`;
     }
 
     setInterval(updateCountdown, 1000);
